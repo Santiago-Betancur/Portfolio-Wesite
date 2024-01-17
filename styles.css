@@ -1,0 +1,600 @@
+/* Color Palette for the Website */
+
+/* Background Colors */
+/* Soft Aqua: #ccf0e1 - Primary background color */
+/* Teal Green: #07a086 - Used in radial gradient */
+/* Darker Teal: #0d97a1 - Used in radial gradient */
+/* Various Greens: #3b8575, #64a184, #649279, #608b77 - Used in linear gradient */
+
+/* Text and Heading Colors */
+/* Light Steel Blue: #ced6e0 - Used for h1 headings */
+/* Deep Sapphire: #0B3954 - Used for h2 and h3 headings */
+/* Charcoal Gray: #36454F - Used for paragraph text and span elements */
+
+/* Button Colors */
+/* Off-White: #f8f9fa - Background color for buttons */
+/* Mint Green: #619c7f - Text color and hover effect for buttons */
+
+/* Additional Colors */
+/* Dark Teal: #74a78f - Used for shadows and timeline line */
+/* Black: rgba(0, 0, 0, 0.712) - Used in button background color */
+/* Lighter Black: rgba(8, 8, 8, 0.116) - Used in article background color */
+
+/*Possible background gradient*/
+/* background: radial-gradient(circle at 30% 30%, #07a086, transparent 60%),
+    radial-gradient(circle at 70% 70%, #0d97a1, transparent 60%),
+    linear-gradient(to right, #3b8575, #64a184, #649279, #608b77, #3b8575); */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "PT Sans", sans-serif;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #ccf0e1;
+}
+/* Style the scrollbar track (background) */
+body::-webkit-scrollbar-track {
+  background-color: #f0f0f0; /* Light gray background */
+  border-radius: 10px; /* Rounded corners for the track */
+}
+
+/* Style the scrollbar thumb (the moving part) */
+body::-webkit-scrollbar-thumb {
+  background-color: #0b3954; /* A color that matches your theme */
+  border-radius: 10px; /* Rounded corners for the thumb */
+}
+
+/* Optional: Style the scrollbar thumb on hover */
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #0d97a1;
+  box-shadow: 0 0 10px 5px rgba(127, 224, 231, 0.6);
+  transform: scale(1.1); /* Darker shade on hover */
+}
+
+/* Set the size of the scrollbar */
+body::-webkit-scrollbar {
+  width: 8px; /* Width of the vertical scrollbar */
+  height: 10px; /* Height of the horizontal scrollbar */
+}
+/* ********************************Loader animation************************************************ */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(
+    circle at 30% 30%,
+    #07a086,
+    rgba(7, 160, 134, 0.6) 60%
+  ),
+  radial-gradient(circle at 70% 70%, #0d97a1, rgba(13, 151, 161, 0.6) 60%),
+  linear-gradient(to right, #3b8575, #64a184, #649279, #608b77, #3b8575);
+  z-index: 2;
+  transition: opacity 1s, visibility 2s;
+}
+.loader-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s, visibility 2s;
+}
+
+.loader::after {
+  content: "";
+  width: 75px;
+  height: 75px;
+  border: 15px solid #dddddd;
+  border-top-color: #009578;
+  border-radius: 50%;
+  animation: loading 0.75s ease infinite;
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+/* ********************************Slide in animation *********************************** */
+/* CSS for the slide-in animation */
+.initial-position {
+  transform: translateY(500px);
+  opacity: 0;
+  transition: transform 5s ease, opacity 5s ease;
+}
+
+/***********************************BUTTONS AND HEADINGS*****************************************************/
+h1 {
+  color: #0b3954;
+  text-transform: uppercase;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  text-align: center;
+  margin: 15px 20px 5px;
+}
+h2 {
+  font-size: 1.1rem;
+  color: #0b3954;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+h3 {
+  font-size: 0.9rem;
+  font-family: "PT Sans", sans-serif;
+  letter-spacing: 1px;
+  color: #132d3c;
+  width: 250px;
+  text-align: center;
+}
+.projects-heading {
+  grid-area: projects-heading;
+  display: flex;
+}
+.projects-heading h1 {
+  text-align: center;
+  margin: auto;
+  text-transform: uppercase;
+}
+p {
+  font-family: Lora;
+  font-size: 9rem;
+  color: #17252f;
+}
+.button {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #0b3954;
+  color: #ccf0e1;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 10px;
+  justify-self: flex-end;
+  margin-top: 35px;
+  text-transform: lowercase;
+  box-shadow: 0 0 5px #74a78f;
+  transition: box-shadow 0.3s;
+  text-transform: uppercase
+}
+.button:hover {
+  box-shadow: 0 0 25px #7fe0e7;
+  transform: scale(1.1);
+  color: #ccf0e1;
+}
+.button:active {
+  transform: scale(0.95); /* Slightly smaller */
+}
+/***************************************MAIN CONTAINER******************************************************/
+.grid-container {
+  max-width: 1300px;
+  width: 90%;
+  display: grid;
+  grid-template-areas:
+    "title projects-heading projects-heading projects-heading"
+    "about projects projects projects"
+    "about projects projects projects"
+    "about projects projects projects"
+    "about skills-heading skills-heading contact"
+    "about skills skills contact";
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.25fr 1fr 1fr 1fr .10fr 1fr;
+  gap: 10px;
+  margin: auto;
+  padding: 40px 0;
+  height: 100vh;
+}
+.grid-container article {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  background: radial-gradient(
+      circle at 30% 30%,
+      #07a086,
+      rgba(7, 160, 134, 0.6) 60%
+    ),
+    radial-gradient(circle at 70% 70%, #0d97a1, rgba(13, 151, 161, 0.6) 60%),
+    linear-gradient(to right, #3b8575, #64a184, #649279, #608b77, #3b8575);
+  border-radius: 10px;
+}
+/*************************************NAME AND TITLE SECTION*************************************************/
+
+.title {
+  grid-area: title;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/*************************************ABOUT SECTION**********************************************************/
+.about {
+  grid-area: about;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.Portfolio-img {
+  max-width: 100%; /* The image will not be wider than its container */
+  max-height: 250px; /* Adjust this value to the maximum height you want */
+  object-fit: cover; /* This ensures the entire image is visible and maintains its aspect ratio */
+  height: auto; /* Maintains the aspect ratio */
+  border-radius: 10px;
+}
+.about-content {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+.about-content p {
+  line-height: 30px;
+  font-size: 16px;
+  text-align: center;
+}
+/*********************************PROJECTS AND ACCOMPLISHMENT SECTION********************************************/
+.projects {
+  grid-area: projects;
+}
+.timeline {
+  width: 100%;
+  overflow-x: auto;
+  display: flex;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  justify-content: flex-start;
+}
+.timeline ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+.timeline ul li {
+  height: 95%;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  justify-content: space-around;
+  background-color: #d0f2f756;
+  margin: 0 10px;
+  border-radius: 10px;
+}
+.timeline ul li img {
+  width: 150px; /* Width of the image */
+  height: 100px; /* Maintains aspect ratio */
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Adds a shadow for depth */
+  object-fit: fit;
+  transition: transform 0.3s ease-in-out;
+  transform-origin: center;
+}
+.timeline ul li video {
+  width: 130px; /* Width of the image */
+  height: 100px; /* Maintains aspect ratio */
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Adds a shadow for depth */
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+  display: none;
+  transform-origin: center;
+}
+.timeline ul li video:hover,
+.timeline ul li img:hover {
+  transform: scale(2);
+}
+
+.timeline ul li span {
+  font-weight: bold;
+  border-radius: 5px;
+  color: #132d3c;
+  width: auto;
+  font-size: 0.9rem;
+  text-align: center;
+  margin: 0 5px;
+}
+.timeline ul li p {
+  font-size: 14px;
+  width: 90%;
+  font-family: "PT Sans";
+  letter-spacing: 1px;
+}
+.project-buttons {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.project-btn {
+  display: inline-block;
+  padding: 5px 15px;
+  background-color: #0b3954;
+  color: #ccf0e1;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 10px;
+  justify-self: flex-end;
+  text-transform: uppercase;
+  font-size: 12px;
+  
+}
+.project-btn:hover {
+  box-shadow: 0 0 25px #7fe0e7;
+  transform: scale(1.1);
+  color: #ccf0e1;
+}
+.project-btn:active {
+  transform: scale(0.95); /* Slightly smaller */
+}
+/*Projects video and media hover effects*/
+
+/* Style the scrollbar track (background) */
+.timeline::-webkit-scrollbar-track {
+  background-color: #f0f0f0; /* Light gray background */
+  border-radius: 10px; /* Rounded corners for the track */
+}
+
+/* Style the scrollbar thumb (the moving part) */
+.timeline::-webkit-scrollbar-thumb {
+  background-color: #0b3954; /* A color that matches your theme */
+  border-radius: 10px; /* Rounded corners for the thumb */
+}
+
+/* Optional: Style the scrollbar thumb on hover */
+.timeline::-webkit-scrollbar-thumb:hover {
+  background-color: #0d97a1;
+  box-shadow: 0 0 10px 5px rgba(127, 224, 231, 0.6);
+  transform: scale(1.1); /* Darker shade on hover */
+}
+
+/* Set the size of the scrollbar */
+.timeline::-webkit-scrollbar {
+  width: 8px; /* Width of the vertical scrollbar */
+  height: 10px; /* Height of the horizontal scrollbar */
+}
+
+/********************************SKILLS AND TECHNOLOGIES********************************************************/
+.skills-heading{
+  grid-area: skills-heading;
+}
+.skills {
+  grid-area: skills; /* Spanning 2 columns in the second row */
+
+}
+.skills-container h1 {
+  margin:0;
+  padding: 0;
+  font-weight: 700;
+  background-color: #ccf0e1;
+  border-radius: 10px;
+}
+.skills-container {
+  height: 100%;
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  justify-content: center;
+  
+}
+.skills-list{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:space-evenly;
+  flex:1;
+}
+.skills-list li  {
+  font-size: 5rem;
+  color: #0b3954; 
+  margin: 5px;
+  transition: color 0.3s, transform 1s; /* Add a smooth color and transform transition effect */
+  transform-origin: center;
+  display: flex;
+  
+}
+
+
+/* Define the original colors for each logo */
+.html:hover {
+  color: #E34F26; /* HTML5 Logo color */
+  transform: scale(1.5);
+}
+
+.css:hover {
+  color: #1572B6; /* CSS3 Logo color */
+  transform: scale(1.5);
+}
+
+.js:hover {
+  color: #F7DF1E; /* JavaScript Logo color */
+  transform: scale(1.5);
+}
+.skills-list li:hover {
+  color: inherit; /* Inherit the original color */
+}
+/* **********************CONTACT SECTION ********************************************************************* */
+.resume {
+  grid-area: contact; /* Occupying the last column in the second row */
+}
+/* ***************************MEDIEA QUERIES*********************************************************** *******/
+@media screen and (max-width: 850px) {
+  body {
+    overflow-y: auto;
+  }
+  .grid-container {
+    grid-template-areas:
+      "title title"
+      "about about"
+      "projects-heading projects-heading"
+      "projects projects"
+      "projects projects"
+      "skills-heading skills-heading"
+      "skills skills"
+      "contact contact";
+    grid-template-columns: 1fr 1fr; /* One column for mobile */
+    grid-template-rows: auto; /* Auto-adjust for content */
+  }
+  .grid-container article {
+    padding: 15px;
+  }
+  .title {
+    grid-area: title;
+  }
+
+  .about {
+    grid-area: about;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .Portfolio-img {
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    height: auto;
+    margin-right: 20px;
+  }
+  .about-content {
+    flex: 1;
+    align-items: center;
+  }
+  .button {
+    width: 80%;
+  }
+  .projects-heading {
+    grid-area: projects-heading;
+  }
+
+  .projects {
+    grid-area: projects;
+    /* Adjustments for 'projects' section on mobile */
+  }
+  .skills-heading {
+    grid-area: skills-heading;
+  }
+  .skills-heading h1{
+    padding: 0;
+    margin: 0;
+  }
+  .skills {
+    grid-area: skills;
+    /* Adjustments for 'skills' section on mobile */
+  }
+
+  .resume {
+    grid-area: contact;
+    /* Adjustments for 'contact' section on mobile */
+  }
+
+  .timeline {
+    height: 400px;
+  }
+
+  .timeline ul {
+    margin-bottom: 10px;
+  }
+  /* Ensure the timeline items stack vertically */
+  /* Any other specific adjustments for mobile view */
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-areas:
+      "title"
+      "about"
+      "projects-heading"
+      "projects"
+      "projects"
+      "skills-heading"
+      "skills"
+      "contact";
+    grid-template-columns: 1fr; /* One column for mobile */
+    grid-template-rows: auto; /* Auto-adjust for content */
+    width: 90%;
+  }
+  .title {
+    grid-area: title;
+    margin: 0;
+  }
+
+  .about {
+    grid-area: about;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .Portfolio-img {
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    height: auto;
+    margin-right: 20px;
+  }
+  .about-content {
+    flex: 1;
+    align-items: center;
+  }
+  .button {
+    width: 80%;
+  }
+  .projects-heading {
+    grid-area: projects-heading;
+  }
+
+  .projects {
+    grid-area: projects;
+    overflow-x: auto;
+    height: 500px;
+    /* Adjustments for 'projects' section on mobile */
+  }
+
+  .skills {
+    grid-area: skills;
+    /* Adjustments for 'skills' section on mobile */
+  }
+
+  .resume {
+    grid-area: contact;
+    /* Adjustments for 'contact' section on mobile */
+  }
+
+  .timeline {
+    width: 100%;
+    overflow-x: auto;
+    display: flex;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    justify-content: flex-start;
+  }
+
+  .timeline ul {
+    margin-bottom: 10px;
+  }
+  .timeline ul li {
+    width: 300px;
+  }
+}
