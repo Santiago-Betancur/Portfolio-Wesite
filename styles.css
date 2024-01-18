@@ -1,29 +1,4 @@
-/* Color Palette for the Website */
 
-/* Background Colors */
-/* Soft Aqua: #ccf0e1 - Primary background color */
-/* Teal Green: #07a086 - Used in radial gradient */
-/* Darker Teal: #0d97a1 - Used in radial gradient */
-/* Various Greens: #3b8575, #64a184, #649279, #608b77 - Used in linear gradient */
-
-/* Text and Heading Colors */
-/* Light Steel Blue: #ced6e0 - Used for h1 headings */
-/* Deep Sapphire: #0B3954 - Used for h2 and h3 headings */
-/* Charcoal Gray: #36454F - Used for paragraph text and span elements */
-
-/* Button Colors */
-/* Off-White: #f8f9fa - Background color for buttons */
-/* Mint Green: #619c7f - Text color and hover effect for buttons */
-
-/* Additional Colors */
-/* Dark Teal: #74a78f - Used for shadows and timeline line */
-/* Black: rgba(0, 0, 0, 0.712) - Used in button background color */
-/* Lighter Black: rgba(8, 8, 8, 0.116) - Used in article background color */
-
-/*Possible background gradient*/
-/* background: radial-gradient(circle at 30% 30%, #07a086, transparent 60%),
-    radial-gradient(circle at 70% 70%, #0d97a1, transparent 60%),
-    linear-gradient(to right, #3b8575, #64a184, #649279, #608b77, #3b8575); */
 * {
   padding: 0;
   margin: 0;
@@ -105,17 +80,27 @@ body::-webkit-scrollbar {
     transform: rotate(1turn);
   }
 }
-/* ********************************Slide in animation *********************************** */
+/* ********************************Slide in animation ********************************************************/
 /* CSS for the slide-in animation */
 .initial-position {
   transform: translateY(500px);
   opacity: 0;
   transition: transform 5s ease, opacity 5s ease;
 }
-
+/* **************************popup for "view" button. enlarge image*-*****************************************/
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2;
+  display: none;
+}
 /***********************************BUTTONS AND HEADINGS*****************************************************/
 h1 {
-  color: #0b3954;
+  color: #ccf0e1;
   text-transform: uppercase;
   margin: 0 auto;
   font-size: 1.2rem;
@@ -124,7 +109,7 @@ h1 {
   margin: 15px 20px 5px;
 }
 h2 {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #0b3954;
   letter-spacing: 2px;
   margin-bottom: 15px;
@@ -160,11 +145,13 @@ p {
   text-align: center;
   border-radius: 10px;
   justify-self: flex-end;
-  margin-top: 35px;
+  margin-top: 20px;
   text-transform: lowercase;
   box-shadow: 0 0 5px #74a78f;
   transition: box-shadow 0.3s;
-  text-transform: uppercase
+  text-transform: uppercase;
+  width: 200px;
+
 }
 .button:hover {
   box-shadow: 0 0 25px #7fe0e7;
@@ -177,7 +164,7 @@ p {
 /***************************************MAIN CONTAINER******************************************************/
 .grid-container {
   max-width: 1300px;
-  width: 90%;
+  width: 95%;
   display: grid;
   grid-template-areas:
     "title projects-heading projects-heading projects-heading"
@@ -190,7 +177,7 @@ p {
   grid-template-rows: 0.25fr 1fr 1fr 1fr .10fr 1fr;
   gap: 10px;
   margin: auto;
-  padding: 40px 0;
+  padding: 15px 0;
   height: 100vh;
 }
 .grid-container article {
@@ -225,21 +212,25 @@ p {
 }
 
 .Portfolio-img {
-  max-width: 100%; /* The image will not be wider than its container */
+  max-width: 90%; /* The image will not be wider than its container */
   max-height: 250px; /* Adjust this value to the maximum height you want */
   object-fit: cover; /* This ensures the entire image is visible and maintains its aspect ratio */
   height: auto; /* Maintains the aspect ratio */
   border-radius: 10px;
 }
 .about-content {
-  width: 80%;
+  width: 90%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+ 
 }
 .about-content p {
-  line-height: 30px;
+  line-height: 25px;
   font-size: 16px;
   text-align: center;
+  height: 100px;
+  margin-bottom: 10px;
 }
 /*********************************PROJECTS AND ACCOMPLISHMENT SECTION********************************************/
 .projects {
@@ -401,7 +392,7 @@ p {
   flex:1;
 }
 .skills-list li  {
-  font-size: 5rem;
+  font-size: 4rem;
   color: #0b3954; 
   margin: 5px;
   transition: color 0.3s, transform 1s; /* Add a smooth color and transform transition effect */
@@ -430,9 +421,74 @@ p {
   color: inherit; /* Inherit the original color */
 }
 /* **********************CONTACT SECTION ********************************************************************* */
-.resume {
+.contact {
   grid-area: contact; /* Occupying the last column in the second row */
 }
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+  width: 100%;
+}
+.contact-btn {
+  display: inline-block;
+  padding: 15px 25px;
+  background-color: #0b3954;
+  color: #ccf0e1;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 10px;
+  justify-self: flex-end;
+  text-transform: uppercase;
+  font-size: 15px;
+  
+}
+.contact-btn:hover {
+  box-shadow: 0 0 25px #7fe0e7;
+  transform: scale(1.1);
+  color: #ccf0e1;
+}
+.contact-btn:active {
+  transform: scale(0.95); /* Slightly smaller */
+}
+.contact-container ul {
+  display: flex;
+  flex-direction: row;
+  width: 40%;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  }
+  .contact-container ul li a {
+    font-size: 25px;
+    color: #0b3954;
+  }
+  .linkedIn:hover{
+    color:#0077b5;
+    transform: scale(1.5);
+  }
+  .linkedIn:active{
+    color:#0077b5;
+    transform: scale(1.1);
+  }
+  .envelope:hover{
+    color:white;
+    transform: scale(1.5);
+  }
+  .envelope:active{
+    color:white;
+    transform: scale(1.1);
+  }
+  .github:hover{
+    color:black;
+    transform: scale(1.5);
+  }
+  .github:active{
+    color:black;
+    transform: scale(1.1);
+  }
 /* ***************************MEDIEA QUERIES*********************************************************** *******/
 @media screen and (max-width: 850px) {
   body {
@@ -450,6 +506,9 @@ p {
       "contact contact";
     grid-template-columns: 1fr 1fr; /* One column for mobile */
     grid-template-rows: auto; /* Auto-adjust for content */
+    width: 95%;
+    padding: 15px 0;
+    
   }
   .grid-container article {
     padding: 15px;
@@ -510,8 +569,25 @@ p {
   .timeline ul {
     margin-bottom: 10px;
   }
-  /* Ensure the timeline items stack vertically */
-  /* Any other specific adjustments for mobile view */
+  .contact{
+    grid-area: contact;
+    padding: 0;
+  }
+  .contact-container {
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+  }
+  .contact-icons {
+    display: flex;
+    align-items: center;
+    width: 60px;
+  }
+  .contact-container ul li a {
+    font-size: 20px;
+    color: #0b3954;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -532,7 +608,8 @@ p {
       "contact";
     grid-template-columns: 1fr; /* One column for mobile */
     grid-template-rows: auto; /* Auto-adjust for content */
-    width: 90%;
+    width: 95%;
+    padding-top: 10px;
   }
   .title {
     grid-area: title;
@@ -551,6 +628,7 @@ p {
     object-fit: cover;
     height: auto;
     margin-right: 20px;
+    margin: 15px 0;
   }
   .about-content {
     flex: 1;
@@ -569,13 +647,28 @@ p {
     height: 500px;
     /* Adjustments for 'projects' section on mobile */
   }
-
+  .timeline ul {
+    margin-bottom: 10px;
+  }
+  .timeline ul li {
+    width: 300px;
+  }
   .skills {
     grid-area: skills;
     /* Adjustments for 'skills' section on mobile */
   }
-
-  .resume {
+  .html {
+    color: #E34F26; /* HTML5 Logo color */
+  }
+  
+  .css {
+    color: #1572B6; /* CSS3 Logo color */
+  }
+  
+  .js {
+    color: #F7DF1E; /* JavaScript Logo color */
+  }
+  .contact {
     grid-area: contact;
     /* Adjustments for 'contact' section on mobile */
   }
@@ -591,10 +684,5 @@ p {
     justify-content: flex-start;
   }
 
-  .timeline ul {
-    margin-bottom: 10px;
-  }
-  .timeline ul li {
-    width: 300px;
-  }
+
 }

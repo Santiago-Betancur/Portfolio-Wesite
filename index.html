@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/styles.css" />
+    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,15 +12,25 @@
       href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&display=swap"
       rel="stylesheet"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
     <title>Santiago Betancur</title>
   </head>
   <body>
+    <!-- ----------------------------Loader containter====================== -->
     <div class="loader"></div>
-
+    <!-- -------------popup for image------------ -->
+    <div class="popup"></div>
     <!-- Grid Container  --------------------------------------------------->
     <div class="grid-container">
       <!-- Title -->
@@ -42,7 +52,6 @@
           </p>
           <a href="#" class="button">About Me</a>
         </div>
-       
       </article>
       <!-- --------------------projects, skills section ------------------------- -->
       <article class="projects-heading initial-position">
@@ -71,10 +80,15 @@
               </p>
               <div class="project-buttons">
                 <a class="project-btn" href="#">code</a>
-                <a class="project-btn" href="https://samsjohnstownny.com/" target="_blank">website</a>
+                <a
+                  class="project-btn"
+                  href="https://samsjohnstownny.com/"
+                  target="_blank"
+                  >website</a
+                >
               </div>
             </li>
-            <li class="project-item">
+            <li class="project-item" id="cornellImg">
               <h3>JavaScript Programming (Certicficate)</h3>
               <img
                 class="project-image"
@@ -90,7 +104,7 @@
                 <a class="project-btn" href="#">view</a>
               </div>
             </li>
-            <li class="project-item">
+            <li class="project-item" id="cheggsImage">
               <h3>Web Development Certificate Program (Certicficate)</h3>
               <img
                 class="project-image"
@@ -124,7 +138,8 @@
               ></video>
               <span>HTML, CSS, JavaScript. - December 2023</span>
               <p>
-                "Designed with HTML and CSS, powered by JavaScript for interactivity."
+                "Designed with HTML and CSS, powered by JavaScript for
+                interactivity."
               </p>
               <div class="project-buttons">
                 <a class="project-btn" href="#">code</a>
@@ -143,9 +158,7 @@
               />
 
               <span> HTML, CSS, JavaScript, Grid layout - January 2024</span>
-              <p>
-                
-              </p>
+              <p></p>
               <div class="project-buttons">
                 <a class="project-btn" href="#">view</a>
               </div>
@@ -165,19 +178,31 @@
             </li>
             <!-- <span>HTML</span> -->
             <li>
-              <i class="fab fa-css3 css"></i> 
+              <i class="fab fa-css3 css"></i>
             </li>
             <!-- <span>CSS</span> -->
             <li>
-              <i class="fab fa-js js"></i> 
+              <i class="fab fa-js js"></i>
             </li>
             <!-- <span>JavaScript</span> -->
           </ul>
-         </div>
+        </div>
       </article>
-
-      <article class="resume initial-position">
-        <!-- Additional content (e.g., Blog, Contact) -->
+      <article class="contact initial-position">
+        <div class="contact-container">
+          <a class="contact-btn" href="#">resume</a>
+          <ul class="contact-icons">
+            <li>
+              <a href="#"><i class="fab fa-linkedin linkedIn"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-envelope envelope"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fab fa-github github"></i></a>
+            </li>
+          </ul>
+        </div>
       </article>
     </div>
     <script src="index.js"></script>
