@@ -17,7 +17,7 @@ window.addEventListener("load", () => {
                 element.classList.remove("initial-position");
             });
         });
-    }, 2000);
+    }, 1000);
 });
 
 // Wait for the DOM content to load

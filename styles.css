@@ -11,6 +11,7 @@ body {
   padding: 0;
   margin: 0;
   background-color: #ccf0e1;
+  height: 100vh;
 }
 /* Style the scrollbar track (background) */
 body::-webkit-scrollbar-track {
@@ -170,11 +171,10 @@ p {
     "title projects-heading projects-heading projects-heading"
     "about projects projects projects"
     "about projects projects projects"
-    "about projects projects projects"
     "about skills-heading skills-heading contact"
     "about skills skills contact";
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 0.25fr 1fr 1fr 1fr .10fr 1fr;
+  grid-template-rows: 0.25fr 1fr 1fr .10fr 1fr;
   gap: 10px;
   margin: auto;
   padding: 15px 0;
@@ -489,10 +489,36 @@ p {
     color:black;
     transform: scale(1.1);
   }
+
+/* ***************************************************ABOUT ME PAGE ****************************************** */
+.about-container {
+  max-width: 1300px;
+  width: 95%;
+  display: grid;
+  grid-template-areas:
+    "title"
+    "about"
+    "about"
+    "about"
+    "about";
+  grid-template-columns: 1fr;
+  grid-template-rows: .23fr 1fr 1fr 1fr;
+  gap: 10px;
+  margin: auto;
+  padding: 15px 0;
+  height: 100vh;
+}
+.about-page{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
 /* ***************************MEDIEA QUERIES*********************************************************** *******/
 @media screen and (max-width: 850px) {
   body {
-    overflow-y: auto;
+    overflow: scroll;
   }
   .grid-container {
     grid-template-areas:
@@ -507,8 +533,10 @@ p {
     grid-template-columns: 1fr 1fr; /* One column for mobile */
     grid-template-rows: auto; /* Auto-adjust for content */
     width: 95%;
-    padding: 15px 0;
-    
+    padding: 10px 0;
+    height: 95%;
+     /* Set a minimum height */
+    margin-bottom: 26px; /* Add some margin to create a gap */
   }
   .grid-container article {
     padding: 15px;
