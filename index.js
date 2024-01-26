@@ -50,5 +50,23 @@ document.addEventListener('DOMContentLoaded', (event) => {
             }
         });
     });
+    // MOdal implementation when view button is clicked the image will expond
+    const viewButtons = document.querySelectorAll('.view-btn');
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById("img01");
+    const captionText = document.getElementById("caption");
+    const closeModal = document.getElementById("close");
+
+    viewButtons.forEach(button => {
+        button.addEventListener('click', function(e){
+            e.preventDefault();
+            modal.style.display ="block";
+            modalImg.src = this.getAttribute("data-img");
+            captionText.innerHTML = this.gettAtribute("data-caption");
+        });
+    })
+    closeModal.onclick = function() {
+        modal.style.display = "none";
+    }
 })
 

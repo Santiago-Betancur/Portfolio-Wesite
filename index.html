@@ -31,6 +31,12 @@
     <div class="loader"></div>
     <!-- -------------popup for image------------ -->
     <div class="popup"></div>
+    <!-- -------------Modal------------------------ -->
+    <div id="imageModal" class="modal">
+      <span id="close">&times;</span>
+      <img class="modal-content" id="img01">
+      <div id="caption"></div>
+    </div>
     <!-- Grid Container  --------------------------------------------------->
     <div class="grid-container">
       <!-- Title -->
@@ -50,7 +56,6 @@
             I am a web developer located in Upstate NY, focused on creating
             unique online experiences with fresh perspectives.
           </p>
-          <a href="#" class="button">About Me</a>
         </div>
       </article>
       <!-- --------------------projects, skills section ------------------------- -->
@@ -79,7 +84,7 @@
                 focus on Flexbox. Incorporated APIs for real-time content.
               </p>
               <div class="project-buttons">
-                <a class="project-btn" href="#">code</a>
+                <a class="project-btn" href="https://github.com/Santiago-Betancur/Sam-s-Steakhouse/tree/main" target="_blank">code</a>
                 <a
                   class="project-btn"
                   href="https://samsjohnstownny.com/"
@@ -101,7 +106,7 @@
                 programming concepts.
               </p>
               <div class="project-buttons">
-                <a class="project-btn" href="#">view</a>
+                <a class="project-btn view-btn" href="#" data-img="resourses/cornellCertificate.PNG">view</a>
               </div>
             </li>
             <li class="project-item" id="cheggsImage">
@@ -117,7 +122,7 @@
                 aspects of programming to enhance web development skills.
               </p>
               <div class="project-buttons">
-                <a class="project-btn" href="#">view</a>
+                <a class="project-btn view-btn" href="#" data-img="resourses/cheggsCertificate.PNG">view</a>
               </div>
             </li>
             <li class="project-item">
@@ -142,8 +147,8 @@
                 interactivity."
               </p>
               <div class="project-buttons">
-                <a class="project-btn" href="#">code</a>
-                <a class="project-btn" href="#">website</a>
+                <a class="project-btn" target="_blank" href="https://github.com/Santiago-Betancur/js-dev-final-capstone-starter-simon-says/blob/main/src/index.js">code</a>
+                <a class="project-btn" target="_blank" href="https://santiago-betancur.github.io/js-dev-final-capstone-starter-simon-says/">website</a>
               </div>
             </li>
             <li class="project-item">
@@ -153,14 +158,19 @@
               </h3>
               <img
                 class="project-image"
-                src="resourses/portfolioWebsite.PNG"
+                src="resourses/portfolioPic.png"
                 alt=""
               />
-
+              <video
+                src="resourses/PortfolioVideo.mp4"
+                class="project-video"
+                muted
+                loop
+              ></video>
               <span> HTML, CSS, JavaScript, Grid layout - January 2024</span>
               <p></p>
               <div class="project-buttons">
-                <a class="project-btn" href="#">view</a>
+                <a class="project-btn" href="#">code</a>
               </div>
             </li>
           </ul>
