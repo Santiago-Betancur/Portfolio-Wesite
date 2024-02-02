@@ -467,7 +467,7 @@ p {
   flex:1;
 }
 .skills-list li  {
-  font-size: 4rem;
+  font-size: 3rem;
   color: #0b3954; 
   margin: 5px;
   transition: color 0.3s, transform 1s; /* Add a smooth color and transform transition effect */
@@ -484,16 +484,24 @@ p {
 }
 
 .css:hover {
-  color: #1572B6; /* CSS3 Logo color */
+  color: #1572B6; 
   transform: scale(1.5);
 }
 
 .js:hover {
-  color: #F7DF1E; /* JavaScript Logo color */
+  color: #F7DF1E;
   transform: scale(1.5);
 }
 .skills-list li:hover {
-  color: inherit; /* Inherit the original color */
+  color: inherit; 
+}
+.jquery:hover {
+  color: #0769AD; 
+  transform: scale(1.5);
+}
+.bootstrap:hover {
+  color: #7952B3; 
+  transform: scale(1.5);
 }
 /* **********************CONTACT SECTION ********************************************************************* */
 .contact {
@@ -822,7 +830,13 @@ p {
   }
   
   .js {
-    color: #F7DF1E; /* JavaScript Logo color */
+    color: #F7DF1E;
+  }
+  .jquery {
+    color: #0769AD; 
+  }
+  .bootstrap {
+    color: #7952B3; 
   }
   .contact {
     grid-area: contact;
