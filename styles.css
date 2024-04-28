@@ -495,7 +495,7 @@ p {
 .skills-list li:hover {
   color: inherit; 
 }
-.jquery:hover {
+.fetch:hover {
   color: #0769AD; 
   transform: scale(1.5);
 }
